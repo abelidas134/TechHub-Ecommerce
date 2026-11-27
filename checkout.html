@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Checkout | TechHub</title>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <a href="#" aria-label="TechHub home">TechHub</a>
+      <nav aria-label="Main navigation">
+        <a href="#checkout">Checkout</a>
+        <a href="#orders">My orders</a>
+      </nav>
+      <span>Demo checkout</span>
+    </header>
+
+    <main id="checkout">
+      <p>Cart / Checkout</p>
+      <h1>Checkout</h1>
+      <p>Enter your details, choose which cart items to order, and place a demo order.</p>
+
+      <p id="notice" role="status" aria-live="polite" hidden></p>
+
+      <form id="checkout-form">
+        <section aria-labelledby="shipping-heading">
+          <h2 id="shipping-heading">Shipping information</h2>
+          <p>
+            <label>First name
+              <input name="firstName" autocomplete="given-name" required>
+            </label>
+          </p>
+          <p>
+            <label>Last name
+              <input name="lastName" autocomplete="family-name" required>
+            </label>
+          </p>
+          <p>
+            <label>Email address
+              <input name="email" type="email" autocomplete="email" required>
+            </label>
+          </p>
+          <p>
+            <label>Phone number
+              <input name="phone" type="tel" autocomplete="tel" required>
+            </label>
+          </p>
+          <p>
+            <label>Street address
+              <input name="address" autocomplete="street-address" required>
+            </label>
+          </p>
+          <p>
+            <label>City
+              <input name="city" autocomplete="address-level2" required>
+            </label>
+          </p>
+          <p>
+            <label>Postal code
+              <input name="postalCode" autocomplete="postal-code" required>
+            </label>
+          </p>
+        </section>
+
+        <aside aria-labelledby="summary-heading">
+          <h2 id="summary-heading">Your cart (<span id="item-count">0</span>)</h2>
+          <p>Cart is a demonstrator for groundwork testing - not integrated to final.</p>
+          <p>Check the items to include in this order. The total updates automatically.</p>
+          <p id="cart-empty-message" role="status" hidden>Your cart is empty. Increase an item quantity to continue.</p>
+          <ul id="cart-items"></ul>
+          <p>Subtotal: <strong id="subtotal"></strong></p>
+          <p>Shipping: <strong>FREE</strong></p>
+          <p>Total: <strong id="total" aria-live="polite"></strong></p>
+        </aside>
+
+        <section aria-labelledby="payment-heading">
+          <h2 id="payment-heading">Payment method</h2>
+          <label>
+            <input type="radio" name="paymentMethod" value="cod" checked>
+            Cash on delivery
+          </label>
+          <label>
+            <input type="radio" name="paymentMethod" value="gcash">
+            GCash (simulated)
+          </label>
+          <p>Demo only. No real payment will be collected.</p>
+        </section>
+
+        <button class="place-order-button" type="submit">Place demo order</button>
+      </form>
+
+      <section id="confirmation" aria-live="polite" hidden>
+        <h2>Order confirmed</h2>
+        <p id="confirmation-message"></p>
+      </section>
+
+      <section id="orders" aria-labelledby="orders-heading">
+        <h2 id="orders-heading">Recent orders</h2>
+        <p>Recent orders cached in this browser.</p>
+        <ul id="order-history"></ul>
+      </section>
+    </main>
+  </body>
+</html>
